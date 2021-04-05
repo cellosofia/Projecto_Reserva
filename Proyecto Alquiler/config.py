@@ -23,7 +23,7 @@ app.secret_key = "abc"
 #app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = DB_URI
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
-app.config["DEBUG"]=True
+app.config["DEBUG"]=False
 
 db = SQLAlchemy(app)
 db.configure_mappers()
@@ -762,4 +762,4 @@ def api_aggreserv(id):
 
 
 
-app.run()
+app.run(host='0.0.0.0', port=5000)
